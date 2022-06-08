@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-BANK</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <div class="cabeçalho">
+            <img src="./assets/Logo.svg">
+            <button class="sairdaconta">Sair da conta</button>
+        </div>
+        <div class="menu">
+            <p>Olá, Rosangela dos Santos Zenezi</p><br><br>
+            <p class="conta">Conta</p>
+            <div class="total">
+                <p class="rs">R$</p>
+                <p id="valor" class="valor"></p>
+                <img class="olho" src="./assets/olho.svg">
+            </div>
+        </div>
+    </header>
+    <main class="menu-botoes">
+        <div class="pix">
+            <button class="botaopix"><img src="./assets/pix.svg"></button>
+            <p>Transferir</p>
+        </div>
+        <div class="pagar">
+            <button class="botaopagar"><img src="./assets/cod.barras.svg"></button>
+            <p>Pagar</p>
+        </div>
+        <div class="transferir">
+            <button class="botaotransferir"><img src="./assets/Transferir.svg"></button>
+            <p>Transferir</p>
+        </div>
+        <div onclick="ação()" class="depositar">
+            <button class="botaodepositar"><img src="./assets/depositar.svg"></button>
+            <p>Depositar</p>
+        </div>
+        <div class="poupança">
+            <button class="botaopoupança"><img src="./assets/poupança.svg"></button>
+            <p>Poupança</p>
+        </div>
+        <div class="celular">
+            <button class="botaocelular"><img src="./assets/celular.svg"></button>
+            <p>Recarga de celular</p>
+        </div>
+        <div onclick="sacar()" class="sacar">
+            <button class="botaosacar"><img src="./assets/depositar.svg"></button>
+            <p>Sacar</p>
+        </div>
+    </main>
+    <aside class="extrato">
+        <div class="transação1">
+            <img src="./assets/porco.svg">
+            <p>remuneração/salário</p>
+            <p>25/05/2022 00:01</p>
+            <p class="valortransação1">R$ 8.530,00</p>
+        </div>
+        <div class="transação2">
+            <img src="./assets/pix0.svg">
+            <p>pix ifood</p>
+            <p>24/05/2022 12:30</p>
+            <p class="valortransação2">R$ 52,50</p>
+        </div>
+        <div class="transação3">
+            <img src="./assets/pix1.svg">
+            <p>pix ifood</p>
+            <p>21/05/2022 19:30</p>
+            <p class="valortransação3">R$ 122,50</p>
+        </div>
+        <div class="transação4">
+            <img src="./assets/pix2.svg">
+            <p>pix contato fulano</p>
+            <p>19/05/2022 15:31</p>
+            <p class="valortransação4">R$ 500,00</p>
+        </div>
+        <div class="transação5">
+            <img src="./assets/Barcode.svg">
+            <p>pagamento boleto</p>
+            <p>16/05/2022 09:30</p>
+            <p class="valortransação5">R$ 250,51</p>
+        </div>
+    </aside>
+    <div id="modal" class="modal">
+        <div class="modal-depositar">
+            <h1 class="titulomodal">Depositar</h1>
+            <input id="valordeposito" class="inputmodal" type="number" placeholder="digite um valor.">
+            <div class="botoesmodal">
+                <button onclick="depositar()" class="botao-depositar">Depositar</button>
+                <button onclick="sair()" class="botaocancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modalsacar" class="modalsaque">
+        <div class="modal-saque">
+            <h1 class="titulomodalsaque">Sacar</h1>
+            <input id="valorsaque" class="inputsaque" type="number" placeholder="digite um valor.">
+            <div class="botoesmodalsaque">
+                <button onclick="saque()" class="botao-sacar">Sacar</button>
+                <button onclick="fechar()" class="botaocancelarsaque">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
