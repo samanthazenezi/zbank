@@ -39,8 +39,8 @@
             <button class="botaotransferir"><img src="./assets/Transferir.svg"></button>
             <p>Transferir</p>
         </div>
-        <div onclick="ação()" class="depositar">
-            <button class="botaodepositar"><img src="./assets/depositar.svg"></button>
+        <div class="depositar">
+            <button onclick="ação()" class="botaodepositar"><img src="./assets/depositar.svg"></button>
             <p>Depositar</p>
         </div>
         <div class="poupança">
@@ -51,42 +51,13 @@
             <button class="botaocelular"><img src="./assets/celular.svg"></button>
             <p>Recarga de celular</p>
         </div>
-        <div onclick="sacar()" class="sacar">
-            <button class="botaosacar"><img src="./assets/depositar.svg"></button>
+        <div class="sacar">
+            <button onclick="sacar()" class="botaosacar"><img src="./assets/depositar.svg"></button>
             <p>Sacar</p>
         </div>
     </main>
-    <aside class="extrato">
-        <div class="transação1">
-            <img src="./assets/porco.svg">
-            <p>remuneração/salário</p>
-            <p>25/05/2022 00:01</p>
-            <p class="valortransação1">R$ 8.530,00</p>
-        </div>
-        <div class="transação2">
-            <img src="./assets/pix0.svg">
-            <p>pix ifood</p>
-            <p>24/05/2022 12:30</p>
-            <p class="valortransação2">R$ 52,50</p>
-        </div>
-        <div class="transação3">
-            <img src="./assets/pix1.svg">
-            <p>pix ifood</p>
-            <p>21/05/2022 19:30</p>
-            <p class="valortransação3">R$ 122,50</p>
-        </div>
-        <div class="transação4">
-            <img src="./assets/pix2.svg">
-            <p>pix contato fulano</p>
-            <p>19/05/2022 15:31</p>
-            <p class="valortransação4">R$ 500,00</p>
-        </div>
-        <div class="transação5">
-            <img src="./assets/Barcode.svg">
-            <p>pagamento boleto</p>
-            <p>16/05/2022 09:30</p>
-            <p class="valortransação5">R$ 250,51</p>
-        </div>
+    <aside class="extrato" id="extrato">
+        <!-- AQUI ENTRA AS TRANSAÇÕES/EXTRATO-->
     </aside>
     <div id="modal" class="modal">
         <div class="modal-depositar">

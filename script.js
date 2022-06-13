@@ -1,5 +1,5 @@
-//DEPOSIAR//
 
+//DEPOSIAR//
 function ação(){
     let modal = document.getElementById('modal')
 
@@ -22,11 +22,10 @@ function depositar(){
 
     var somaTotal = parseInt(valorTotal) + parseInt(valorDepositado)
     document.getElementById('valor').innerText = somaTotal;
+    extratoDeposito();
     sair();
 }
-
 //SACAR//
-
 function sacar(){
     let modal = document.getElementById('modalsacar')
 
@@ -50,14 +49,47 @@ function saque(){
     var saqueTotal = parseInt(valorConta) - parseInt(valorSaque)
     document.getElementById('valor').innerText = saqueTotal;
     console.log(saqueTotal);
+    extratoSaque();
     fechar();
 }
+//EXTRATO DEPOSITO//
+function extratoDeposito(){
+    let extrato1 = document.getElementById('valordeposito');
+    let listExtrato = document.getElementById('extrato');
 
+    var valorFormatado = formartarMoeda(extrato1.value);
 
+    listExtrato.innerHTML += '<div class="tpositiva">' + '<img src="./assets/porco.svg">' + '<p>Deposito</p>'+ dataHora() + formartarMoeda(extrato1.value) + '</div>'
+}
+//EXTRATO SAQUE//
+function extratoSaque(){
+    let extrato2 = document.getElementById('valorsaque');
+    let listExtrato = document.getElementById('extrato');
 
+    var valorFormatado = formartarMoeda(extrato2.value);
 
+    listExtrato.innerHTML += '<div class="tnegativa">' + '<img src="./assets/pix0.svg">' + '<p>Saque</p>' + dataHora() + formartarMoeda(extrato2.value) + '</div>'
+}
+//DATA E HORA PARA EXTRATO//
+function dataHora(){
+    let data = new Date(),
+    dia  = data.getDate().toString().padStart(2, '0'),
+    mes  = (data.getMonth()+1).toString().padStart(2, '0'),
+    ano  = data.getFullYear();
+    horas = data.getHours();
+    minutos = data.getMinutes();
+    return `${dia}/${mes}/${ano}${horas}:${minutos}`;
+    
+    return dataHora;
+}
+//MOEDA FORMATADA//
+function formartarMoeda(valor) {
+    var valor = parseInt(valor);
+    var valorFormatado = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol' });
+    return valorFormatado;
+}
 
-
+    
 
 
 
