@@ -59,7 +59,7 @@ function extratoDeposito(){
 
     var valorFormatado = formartarMoeda(extrato1.value);
 
-    listExtrato.innerHTML += '<div class="tpositiva">' + '<img src="./assets/porco.svg">' + '<p>Deposito</p>'+ dataHora() + formartarMoeda(extrato1.value) + '</div>'
+    listExtrato.innerHTML += '<div class="tpositiva">' + '<img src="./assets/porco.svg">' + '<p>Deposito</p>'+ data() + '<p></p>' + hora() + '<p></p>' + formartarMoeda(extrato1.value) + '</div>'
 }
 //EXTRATO SAQUE//
 function extratoSaque(){
@@ -68,19 +68,26 @@ function extratoSaque(){
 
     var valorFormatado = formartarMoeda(extrato2.value);
 
-    listExtrato.innerHTML += '<div class="tnegativa">' + '<img src="./assets/pix0.svg">' + '<p>Saque</p>' + dataHora() + formartarMoeda(extrato2.value) + '</div>'
+    listExtrato.innerHTML += '<div class="tnegativa">' + '<img src="./assets/pix0.svg">' + '<p>Saque</p>' + data() + '<p></p>' + hora() + '<p></p>' + formartarMoeda(extrato2.value) + '</div>'
 }
-//DATA E HORA PARA EXTRATO//
-function dataHora(){
+//DATA PARA EXTRATO//
+function data(){
     let data = new Date(),
     dia  = data.getDate().toString().padStart(2, '0'),
     mes  = (data.getMonth()+1).toString().padStart(2, '0'),
     ano  = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+    
+    return data;
+}
+//HORA PARA EXTRATO//
+function hora(){
+    let data = new Date(),
     horas = data.getHours();
     minutos = data.getMinutes();
-    return `${dia}/${mes}/${ano}${horas}:${minutos}`;
+    return `${horas}:${minutos}`;
     
-    return dataHora;
+    return hora;
 }
 //MOEDA FORMATADA//
 function formartarMoeda(valor) {

@@ -94,6 +94,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
     padding: 20px;
     border-bottom: 7px solid #00DD16;
 }
@@ -105,6 +106,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
     padding: 20px;
     border-bottom: 7px solid #DD0000;
 }
@@ -252,4 +254,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+/*PARA JS*/
+.separação {
+    margin-inline: 3rem;
 }
