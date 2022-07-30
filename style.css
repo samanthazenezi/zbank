@@ -1,261 +1,325 @@
-/* INTERFACE BANCO */
-
+/* ROOT */
 * {
-    margin: 0;
     padding: 0;
-    box-sizing: 0;
-    border: none;
+    margin: 0;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
+/* GLOBAIS */
+
 body {
-    background-color: #ECEFF3;
+    background: #F5F5F5;
 }
-.cabeçalho {
+/* LOGIN */
+form {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    max-width: 2000px;
+
+    margin: 250px 0;
 }
-.sairdaconta {
-    background-color: #E4C0C0;
+form h3 {
     color: #000000;
-    border-radius: 18px;
-    width: 199px;
-    height: 30px;
+    
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 141%;
+
+    text-transform: uppercase;
 }
-.menu {
-    background-color: #1C0929;
-    width: 2000px;
-    height: 128px;
-    color: #fff;
+.content-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.content-form label {
     font-size: 14px;
     font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+    line-height: 141%;
+
+    color: #000000;
 }
-.valor, .rs {
-    font-size: 18px;
-    font-weight: 900;
-    margin-top: 5px;
-}
-.total {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.olho {
-   margin-left: 15px;
-}
-.menu-botoes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-.pix, .pagar, .transferir, .poupança,.depositar, .celular, .sacar {
+.content-form input {
     background-color: #fff;
-    width: 151px;
-    height: 131px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px 2px rgba(208, 208, 208, 0.8);
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+
+    width: 150px;
+    height: 30px;
+    
+    outline: none;
+}
+button {
+    background-color: #E4C0C0;
+
+    width: 150px;
+    height: 30px;
+
+    border: none;
+    border-radius: 20px;
+
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 141%;
+
+    cursor: pointer;
+}
+button:hover {
+    font-weight: 600;
+    filter: brightness(1.1);
+}
+
+/* INTERFACE Z-BANK */
+/* HEADER */
+
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 32px;
+}
+header a {
+    background-color: #E4C0C0;
+
+    width: 150px;
+    padding: 7px;
+
+    border: none;
+    border-radius: 20px;
+
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 141%;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+header a:hover {
+    font-weight: 600;
+    filter: brightness(1.1);
+}
+
+/* MENU */
+
+#menu-inicial {
+    background-color: #1C0929;
+    
+    padding: 24px 48px;
+}
+#menu-inicial p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 141%;
+
+    color: #fff;
+
+    margin-bottom: 5px;
+}
+#menu-inicial p strong {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 109%;
+}
+.saldo {
+    display: flex;
     align-items: center;
     gap: 15px;
-    padding: 15px;
+
+    margin-top: 3px;
+}
+
+/* MAIN */
+/* OPÇÕES */
+#opcoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    list-style-type: none;
+    margin-top: 32px;
+
+    cursor: pointer;
+
+    margin-bottom: 100px;
+}
+#opcoes img {
+    background-color: #E8E8F0;
+
+    border-radius: 50%;
+
+    padding: 20px;
+}
+#opcoes li {
+    background-color: #FFFFFF;
+
+    width: 151px;
+    height: 131px;
+
+    border-radius: 10px;
+}
+#opcoes li a {
+    text-decoration: none;
+
     font-size: 12px;
     font-weight: 500;
-}
-.botaopix, .botaopagar, .botaotransferir, .botaodepositar, .botaopoupança, .botaocelular, .botaosacar {
-    background-color: #E8E8F0;
-    border-radius: 50%;
-    width: 71px;
-    height: 71px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/* TRANSAÇÕES-EXTRATO */
+    line-height: 164%;
+    text-align: center;
 
-.extrato {
+    color: #7A7A80;
+
+    opacity: 0.8;
+
+    padding: 20px;
+
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+/* TRANSAÇÕES */
+#transacoes {
+    max-width: 800px;
+    
+    margin: 32px auto;
+}
+.content-transacao {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #FEFEFE;
+
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+
+    width: 800px;
+    height: 79px;
+    
+    margin-block: 30px;
+}
+
+/* MODAL */
+#modal {
+    background-color: rgba(1, 1, 1, 0.15);
+
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-}
-.tpositiva {
-    background-color: #fff;
-    border-radius: 8px;
-    width: 800px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-bottom: 7px solid #00DD16;
-}
-.tnegativa {
-    background-color: #fff;
-    border-radius: 8px;
-    width: 800px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-bottom: 7px solid #DD0000;
-}
-/* MOOOODAL DEPOSITAR */
-.modal {
-    background-color: rgba(0, 0, 0, 0.5);
+
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    justify-content: center;
-    align-items: center;
+    bottom: 0;
+    right: 0;
 }
-.modal-depositar {
-    background-color: #fff;
+.content-modal {
+    background-color: #FFFFFF;
+    
+    border-radius: 20px;
+
     width: 324px;
     height: 235px;
-    border-radius: 20px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.titulomodal {
+.content-modal h1 {
+    color: #000000;
+
     font-size: 20px;
-    font-weight: 900;
-    color: #000000;
-    padding: 10px;
-    text-align: center;
-    
+    font-weight: 500;
+    line-height: 24px;
+
+    margin-block: 43px;
 }
-.inputmodal {
+.content-modal input {
     background-color: #F9F9F9;
+
+    border: none;
     border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-::placeholder {
-    color: #DBDBDB;
-    padding: 10px;
-    text-align: center;
-}
-.botao-depositar {
-    background-color: #D3EAC9;
-    width: 95px;
+
+    width: 212px;
     height: 37px;
-    border-radius: 10px;
-    color: #000000;
-    text-align: center;
-}
-.botao-depositar:hover{
-    cursor: pointer;
-    background-color: rgb(206, 238, 170);
-}
-.botaocancelar {
-    background-color: #E4C0C0;
-    width: 95px;
-    height: 37px;
-    border-radius: 10px;
-    color: #000000;
-    text-align: center;
-}
-.botaocancelar:hover{
-    cursor: pointer;
-    background-color: rgb(232, 183, 187);
-}
-.botoesmodal {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-/* MOOOODAL SAQUE */
-.modalsaque {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: none
-    ;
-    justify-content: center;
-    align-items: center;
-}
-.modal-saque {
-    background-color: #fff;
-    width: 324px;
-    height: 235px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.titulomodalsaque {
-    font-size: 20px;
-    font-weight: 900;
-    color: #000000;
-    padding: 10px;
-    text-align: center;
     
+    outline: none;
+    
+    margin-bottom: 35px;
 }
-.inputsaque {
-    background-color: #F9F9F9;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-::placeholder {
+.content-modal input::placeholder {
     color: #DBDBDB;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 141%;
+
+    text-align: center;
+
     padding: 10px;
-    text-align: center;
 }
-.botao-sacar {
+.buttons {
+    margin-bottom: 30px;
+}
+.conf-button {
     background-color: #D3EAC9;
+    
     width: 95px;
     height: 37px;
+
+    border: none;
     border-radius: 10px;
+
     color: #000000;
-    text-align: center;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 141%;
+
+    transition: 400ms;
+
+    margin-inline: 5px;
 }
-.botao-sacar:hover{
-    cursor: pointer;
-    background-color: rgb(206, 238, 170);
+.conf-button:hover {
+    font-weight: 700;
+    filter: brightness(1.1);
 }
-.botaocancelarsaque {
+.cancel-button {
     background-color: #E4C0C0;
+    
     width: 95px;
     height: 37px;
+
+    border: none;
     border-radius: 10px;
+
     color: #000000;
-    text-align: center;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 141%;
+
+    transition: 400ms;
+
+    margin-inline: 5px;
 }
-.botaocancelarsaque:hover{
-    cursor: pointer;
-    background-color: rgb(232, 183, 187);
+.cancel-button:hover {
+    font-weight: 700;
+    filter: brightness(1.1);
 }
-.botoesmodalsaque {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-/*PARA JS*/
-.separação {
-    margin-inline: 3rem;
+#modal.hide {
+    opacity: 0;
+    visibility: hidden;   
 }
